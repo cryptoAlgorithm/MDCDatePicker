@@ -38,11 +38,9 @@ body {
     min-height: 100vh;
     margin: 0;
     animation-name: bodyBackgroundColor;
-    animation-duration: 10s;
+    animation-duration: 8s;
     animation-iteration-count: infinite;
-    transition: background-color 1s linear;
-
-    --mdc-theme-text-primary-on-background: #fff;
+    transition: background-color .8s linear;
 }
 
 /* Body background color transition */

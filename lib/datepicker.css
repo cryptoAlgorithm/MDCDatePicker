@@ -33,10 +33,10 @@
     background-color: var(--mdc-theme-primary);
     padding: 10px 24px;
     border-radius: 4px 4px 0 0;
-    --mdc-ripple-color: #fff;
+    --mdc-ripple-color: var(--mdc-theme-text-primary-on-dark);
 }
 .mdc-datepicker__header > h6, .mdc-datepicker__header > .mdc-datepicker__header-content > h2, .mdc-datepicker__header i {
-    color: var(--mdc-theme-text-primary-on-background);
+    color: var(--mdc-theme-text-primary-on-dark);
 }
 .mdc-datepicker__header > h6 {
     margin-top: 0;
@@ -84,9 +84,10 @@
     width: 100%;
     margin-top: 6px;
     user-select: none;
+    border-spacing: 4px;
 }
 .mdc-datepicker > .mdc-datepicker__body > table tr {
-    line-height: 40px; /* As per material specs */
+    line-height: 36px;
 }
 .mdc-datepicker > .mdc-datepicker__body > table th {
     font-weight: normal;
@@ -96,14 +97,18 @@
 .mdc-datepicker > .mdc-datepicker__body > table td {
     border-radius: 20px;
     text-align: center;
+    transition: all .15s ease-in-out;
+    transition-property: background-color, color;
 }
 .mdc-datepicker > .mdc-datepicker__body > table td.today {
+    border: 1px solid var(--mdc-theme-text-primary-on-background);
+}
+.mdc-datepicker > .mdc-datepicker__body > table td.selected {
     background-color: var(--mdc-theme-primary);
-    color: var(--mdc-theme-text-primary-on-background);
-    --mdc-ripple-color: #fff;
+    color: var(--mdc-theme-text-primary-on-dark);
 }
 .mdc-datepicker > .mdc-datepicker__body > table th, .mdc-datepicker > .mdc-datepicker__body > table td {
-    width: 40px;
+    width: 36px; /* As per material specs */
 }
 
 /* Datepicker card actions */

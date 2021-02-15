@@ -1,0 +1,1 @@
+new MDCDatepicker(document.getElementById('datepicker'));
