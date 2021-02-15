@@ -1,0 +1,119 @@
+.mdc-datepicker {
+    margin: 16px;
+    border-radius: 4px;
+    min-width: 328px;
+    min-height: 512px;
+    --light-text-color: rgba(0, 0, 0, .58);
+}
+
+/* Datepicker buttons */
+.mdc-datepicker button {
+    border-radius: 7px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 0 8px;
+    height: 36px;
+}
+.mdc-datepicker button.circular-button {
+    display: inline-block;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+}
+.mdc-datepicker .mdc-datepicker__dull-button {
+    color: var(--light-text-color);
+    --mdc-typography-button-letter-spacing: normal;
+    --mdc-typography-button-text-transform: none;
+}
+
+/* Datepicker header */
+.mdc-datepicker > .mdc-datepicker__header {
+    background-color: var(--mdc-theme-primary);
+    padding: 10px 24px;
+    border-radius: 4px 4px 0 0;
+    --mdc-ripple-color: #fff;
+}
+.mdc-datepicker__header > h6, .mdc-datepicker__header > .mdc-datepicker__header-content > h2, .mdc-datepicker__header i {
+    color: var(--mdc-theme-text-primary-on-background);
+}
+.mdc-datepicker__header > h6 {
+    margin-top: 0;
+}
+.mdc-datepicker__header > .mdc-datepicker__header-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "selectedRange textInput";
+    margin-top: 5px;
+}
+.mdc-datepicker__header > .mdc-datepicker__header-content > h2 {
+    margin-bottom: 0;
+    display: inline-block;
+    margin-top: 0;
+    grid-area: selectedRange;
+    justify-self: start;
+}
+.mdc-datepicker__header > .mdc-datepicker__header-content > button{
+    grid-area: textInput;
+    align-self: center;
+}
+
+/* Datepicker body */
+.mdc-datepicker > .mdc-datepicker__body {
+    padding: 10px 12px;
+}
+/* Body button row */
+.mdc-datepicker > .mdc-datepicker__body > .mdc-datepicker__body-button-row {
+    display: grid;
+    grid-template-areas: "monthYearBtn prevMo nextMo";
+    grid-template-columns: 1fr auto auto;
+}
+.mdc-datepicker > .mdc-datepicker__body > .mdc-datepicker__body-button-row > #month-year-btn {
+    grid-area: monthYearBtn;
+    justify-self: start;
+}
+.mdc-datepicker > .mdc-datepicker__body > .mdc-datepicker__body-button-row > #next-month {
+    grid-area: nextMo;
+}
+.mdc-datepicker > .mdc-datepicker__body > .mdc-datepicker__body-button-row > #prev-month {
+    grid-area: prevMo;
+}
+/* Body calendar table */
+.mdc-datepicker > .mdc-datepicker__body > table {
+    width: 100%;
+    margin-top: 6px;
+    user-select: none;
+}
+.mdc-datepicker > .mdc-datepicker__body > table tr {
+    line-height: 40px; /* As per material specs */
+}
+.mdc-datepicker > .mdc-datepicker__body > table th {
+    font-weight: normal;
+    font-size: 12px;
+    color: var(--light-text-color);
+}
+.mdc-datepicker > .mdc-datepicker__body > table td {
+    border-radius: 20px;
+    text-align: center;
+}
+.mdc-datepicker > .mdc-datepicker__body > table td.today {
+    background-color: var(--mdc-theme-primary);
+    color: var(--mdc-theme-text-primary-on-background);
+    --mdc-ripple-color: #fff;
+}
+.mdc-datepicker > .mdc-datepicker__body > table th, .mdc-datepicker > .mdc-datepicker__body > table td {
+    width: 40px;
+}
+
+/* Datepicker card actions */
+.mdc-datepicker > .mdc-card__actions {
+    margin-top: auto;
+}
+.mdc-datepicker > .mdc-card__actions > div {
+    margin-left: auto;
+}
+
+* {
+    padding-top: 0.1px; /* Prevent collapsing of margins */
+}

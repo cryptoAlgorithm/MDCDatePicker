@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MDC Web Date Picker</title>
+
+    <!-- MDC Components -->
+    <script src="assets/material-components.js"></script>
+    <link href="assets/material-components.css" rel="stylesheet">
+    <script defer src="assets/init.js"></script> <!-- MDC auto-init -->
+
+    <!-- Stylesheets -->
+    <link href="lib/datepicker.css" rel="stylesheet">
+    <link href="assets/demo.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script defer src="lib/datepicker.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+</head>
+<body class="mdc-typography">
+<!-- Tooltips -->
+<div id="pick-year-month" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Choose year and month</div>
+</div>
+<div id="prev-month-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Previous month</div>
+</div>
+<div id="next-month-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Next month</div>
+</div>
+<!-- Days -->
+<div id="mon-day-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Monday</div>
+</div>
+<div id="tues-day-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Tuesday</div>
+</div>
+<div id="wed-day-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Wednesday</div>
+</div>
+<div id="thurs-day-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Thursday</div>
+</div>
+<div id="fri-day-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Friday</div>
+</div>
+<div id="sat-day-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Saturday</div>
+</div>
+<div id="sun-day-tooltip" class="mdc-tooltip" role="tooltip" aria-hidden="true" data-mdc-auto-init="MDCTooltip">
+    <div class="mdc-tooltip__surface">Sunday</div>
+</div>
+<!------>
+<!-- Datepicker demo -->
+<div class="mdc-datepicker mdc-card mdc-elevation--z12">
+    <!-- Datepicker header -->
+    <div class="mdc-datepicker__header">
+        <h6 class="mdc-typography--overline">Select Date</h6>
+        <div class="mdc-datepicker__header-content">
+            <h2 class="mdc-typography--headline4">Mon, Nov 17</h2>
+            <button class="circular-button mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
+                <i class="material-icons">edit</i>
+            </button>
+        </div>
+    </div>
+    <!------>
+    <!-- Datepicker body -->
+    <div class="mdc-datepicker__body">
+        <div class="mdc-datepicker__body-button-row">
+            <button class="mdc-button mdc-datepicker__dull-button" data-mdc-auto-init="MDCRipple" id="month-year-btn"
+                    aria-describedby="pick-year-month">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">November 2018</span>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">expand_more</i>
+            </button>
+            <button class="circular-button mdc-ripple-surface" data-mdc-auto-init="MDCRipple" id="prev-month"
+                    aria-describedby="prev-month-tooltip">
+                <i class="material-icons">chevron_left</i>
+            </button>
+            <button class="circular-button mdc-ripple-surface" data-mdc-auto-init="MDCRipple" id="next-month"
+                    aria-describedby="next-month-tooltip">
+                <i class="material-icons">chevron_right</i>
+            </button>
+        </div>
+        <!-- Calendar table -->
+        <table>
+            <!-- Day headers -->
+            <thead>
+                <tr>
+                    <th aria-describedby="sun-day-tooltip">S</th>
+                    <th aria-describedby="mon-day-tooltip">M</th>
+                    <th aria-describedby="tues-day-tooltip">T</th>
+                    <th aria-describedby="wed-day-tooltip">W</th>
+                    <th aria-describedby="thurs-day-tooltip">T</th>
+                    <th aria-describedby="fri-day-tooltip">F</th>
+                    <th aria-describedby="sat-day-tooltip">S</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <!------>
+    <!-- Actions -->
+    <div class="mdc-card__actions">
+        <div>
+            <button class="mdc-button mdc-card__action mdc-card__action--button" data-mdc-auto-init="MDCRipple">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Cancel</span>
+            </button>
+            <button class="mdc-button mdc-card__action mdc-card__action--button" data-mdc-auto-init="MDCRipple">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">OK</span>
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
