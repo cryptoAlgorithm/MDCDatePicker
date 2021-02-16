@@ -2,8 +2,14 @@
     margin: 16px;
     border-radius: 4px;
     min-width: 328px;
-    min-height: 512px;
+    height: 512px;
+    max-height: 512px;
+    transition: max-height .25s ease-out;
     --light-text-color: rgba(0, 0, 0, .58);
+    overflow: hidden;
+}
+.mdc-datepicker.mdc-datepicker__text-field {
+    max-height: 264px;
 }
 
 /* Datepicker buttons */
@@ -54,7 +60,7 @@
     grid-area: selectedRange;
     justify-self: start;
 }
-.mdc-datepicker__header > .mdc-datepicker__header-content > button{
+.mdc-datepicker__header > .mdc-datepicker__header-content > button {
     grid-area: textInput;
     align-self: center;
 }
@@ -63,11 +69,15 @@
 .mdc-datepicker > .mdc-datepicker__body {
     padding: 10px 12px;
 }
+
 /* Body button row */
 .mdc-datepicker > .mdc-datepicker__body > .mdc-datepicker__body-button-row {
     display: grid;
     grid-template-areas: "monthYearBtn prevMo nextMo";
     grid-template-columns: 1fr auto auto;
+}
+.mdc-datepicker.mdc-datepicker__text-field > .mdc-datepicker__body > .mdc-datepicker__body-button-row {
+    display: none;
 }
 .mdc-datepicker > .mdc-datepicker__body > .mdc-datepicker__body-button-row > #month-year-btn {
     grid-area: monthYearBtn;
@@ -79,36 +89,59 @@
 .mdc-datepicker > .mdc-datepicker__body > .mdc-datepicker__body-button-row > #prev-month {
     grid-area: prevMo;
 }
-/* Body calendar table */
-.mdc-datepicker > .mdc-datepicker__body > table {
+
+/* Body calendar grid */
+.mdc-datepicker__body > div.cal {
+    margin-top: 10px;
+}
+.mdc-datepicker.mdc-datepicker__text-field > .mdc-datepicker__body > div.cal {
+    display: none;
+}
+.mdc-datepicker__body > div.cal > div.body, .mdc-datepicker__body > div.cal > div.dayHeaders {
     width: 100%;
-    margin-top: 6px;
     user-select: none;
     border-spacing: 4px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-row-gap: 2px;
 }
-.mdc-datepicker > .mdc-datepicker__body > table tr {
+/* Mon, tues etc. day headers on top of calendar */
+.mdc-datepicker > .mdc-datepicker__body > div.cal > div.dayHeaders > div {
+    font-size: .75rem;
+    color: var(--light-text-color);
+    text-align: center;
+    height: 36px;
     line-height: 36px;
 }
-.mdc-datepicker > .mdc-datepicker__body > table th {
-    font-weight: normal;
-    font-size: 12px;
-    color: var(--light-text-color);
-}
-.mdc-datepicker > .mdc-datepicker__body > table td {
-    border-radius: 20px;
+.mdc-datepicker > .mdc-datepicker__body > div.cal > div.body > div {
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
     text-align: center;
     transition: all .15s ease-in-out;
     transition-property: background-color, color;
+    margin: auto;
+    font-size: .8rem;
+    color: var(--mdc-theme-text-primary-on-background);
+    line-height: 36px; /* Hack to center text */
+    border: 1px solid transparent;
 }
-.mdc-datepicker > .mdc-datepicker__body > table td.today {
+.mdc-datepicker > .mdc-datepicker__body > div.cal > div.body > div.today {
     border: 1px solid var(--mdc-theme-text-primary-on-background);
 }
-.mdc-datepicker > .mdc-datepicker__body > table td.selected {
+.mdc-datepicker > .mdc-datepicker__body > div.cal > div.body > div.selected {
     background-color: var(--mdc-theme-primary);
     color: var(--mdc-theme-text-primary-on-dark);
 }
-.mdc-datepicker > .mdc-datepicker__body > table th, .mdc-datepicker > .mdc-datepicker__body > table td {
-    width: 36px; /* As per material specs */
+
+/* Text field for date input */
+.mdc-datepicker > .mdc-datepicker__body > label.mdc-text-field {
+    margin: 6px 12px;
+    width: calc(100% - 24px);
+    display: none;
+}
+.mdc-datepicker.mdc-datepicker__text-field > .mdc-datepicker__body > label.mdc-text-field {
+    display: inline-flex;
 }
 
 /* Datepicker card actions */

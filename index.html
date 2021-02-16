@@ -59,7 +59,7 @@
     <div class="mdc-datepicker__header">
         <h6 class="mdc-typography--overline">Select Date</h6>
         <div class="mdc-datepicker__header-content">
-            <h2 class="mdc-typography--headline4">Mon, Nov 17</h2>
+            <h2 class="mdc-typography--headline4">Selected Date</h2>
             <button class="circular-button mdc-ripple-surface" data-mdc-auto-init="MDCRipple">
                 <i class="material-icons">edit</i>
             </button>
@@ -72,7 +72,7 @@
             <button class="mdc-button mdc-datepicker__dull-button" data-mdc-auto-init="MDCRipple" id="month-year-btn"
                     aria-describedby="pick-year-month">
                 <span class="mdc-button__ripple"></span>
-                <span class="mdc-button__label">November 2018</span>
+                <span class="mdc-button__label">Month, Year</span>
                 <i class="material-icons mdc-button__icon" aria-hidden="true">expand_more</i>
             </button>
             <button class="circular-button mdc-ripple-surface" data-mdc-auto-init="MDCRipple" id="prev-month"
@@ -84,22 +84,30 @@
                 <i class="material-icons">chevron_right</i>
             </button>
         </div>
-        <!-- Calendar table -->
-        <table>
-            <!-- Day headers -->
-            <thead>
-                <tr>
-                    <th aria-describedby="sun-day-tooltip">S</th>
-                    <th aria-describedby="mon-day-tooltip">M</th>
-                    <th aria-describedby="tues-day-tooltip">T</th>
-                    <th aria-describedby="wed-day-tooltip">W</th>
-                    <th aria-describedby="thurs-day-tooltip">T</th>
-                    <th aria-describedby="fri-day-tooltip">F</th>
-                    <th aria-describedby="sat-day-tooltip">S</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+
+        <!-- Calendar grid -->
+        <div class="cal">
+            <!-- Days -->
+            <div class="dayHeaders">
+                <div aria-describedby="sun-day-tooltip">S</div>
+                <div aria-describedby="mon-day-tooltip">M</div>
+                <div aria-describedby="tues-day-tooltip">T</div>
+                <div aria-describedby="wed-day-tooltip">W</div>
+                <div aria-describedby="thurs-day-tooltip">T</div>
+                <div aria-describedby="fri-day-tooltip">F</div>
+                <div aria-describedby="sat-day-tooltip">S</div>
+            </div>
+
+            <div class="body"></div>
+        </div>
+
+        <!-- Manual text input -->
+        <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+            <span class="mdc-text-field__ripple"></span>
+            <span class="mdc-floating-label" id="my-label-id">Enter Date</span>
+            <input class="mdc-text-field__input" type="date" aria-labelledby="my-label-id" placeholder="mm/dd/yyyy">
+            <span class="mdc-line-ripple"></span>
+        </label>
     </div>
     <!------>
     <!-- Actions -->
